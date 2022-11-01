@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css\index.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="shortcut icon" href="{% static 'images/title.png' %}" type="image/x-icon/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>About Animation CSS</title>
+</head>
+<body>
+    <!-- Implement the Navbar -->
+    <nav class="navbar navbar-expand-sm sticky-top shadow p-3 mb-5 bg-body rounded" id="whole-nav">
+        <div class="container">
+            <!-- Replace this with your own logo -->
+            <img src="{% static './images/title.png' %}" alt="Title" width="50" height="50">
+            <a class="navbar-brand" href="/">Animation CSS</a>
+
+            <!-- Toggler/collapsibe Button for small screens -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myList"
+                aria-controls="myList" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- List of links -->
+            <div class="collapse navbar-collapse" id="myList">
+                <ul class="navbar-nav text-center">
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: brown;" href="/about#here">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: brown;" href="/#browse">Animation Browsing</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: brown;" href="/directory">Add Animation</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+            <form class="d-flex">
+              {% if user.is_authenticated %}
+              <a href="#" style="text-decoration: none;"><div class="p-2 me-4"><i class="bi bi-person-check-fill text-success me-2"></i><span class="text-dark">Hello, {{user.username}}</span></div></a>
+              <a href="/logout"><div class="btn btn-outline-danger" type="submit">Logout</div></a>
+              {% else %}
+              <a href="/signup"><div class="btn btn-dark me-4" type="submit">Register</div></a>
+              <a href="/login"><div class="btn btn-outline-success me-4" type="submit">Login</div></a>
+              {% endif %}
+            </form>
+        </div>
+    </nav>
+    <main id="here">
+        <div class="jumbotron py-5 px-5">
+            <div class="h-100 p-5 bg-light border rounded-3">
+              <h2>
+                <img src="{% static './images/title.png' %}" alt="Title" width="50" height="50"/>
+                About | Animation CSS
+              </h2>
+              <p>This project can be a solution to the <a href="https://github.com/UsmanAhmadSaeed/Animations/issues/12" target="_blank" style="text-decoration: none; color: purple;"> issue </a>raised by the Github user 
+                <a href="https://github.com/UsmanAhmadSaeed" target="_blank" style="color: purple; text-decoration: none;">@UsmanAhmedSaeed</a> which specified the need for creating a custom 
+                landing page for all the contributed or to be contributed animations which fall 
+                under the ‘enhancement, good-first-issue and help-wanted’ tags on GitHub. 
+              </p>
+              <p>
+                <b>Animations:</b>
+                An open source collection of coded animations, from loaders, to menus, and scroll transitions and much more.
+                <br>
+                <b>Contribution Guidelines:</b>
+                <br>To contribute to this repository
+                <ul>
+                  <li>
+                    Create a personal fork of the project on Github. In other words, fork the repository or project.
+                  </li>
+                  <li>
+                    Clone the fork on your local machine.
+                  </li>
+                  <li>
+                    Create a new branch to work on.
+                  </li>
+                  <li>
+                    Create a new folder in relevant directory, with appropriate name.
+                  </li>
+                  <li>
+                    Add your animation/design files.
+                  </li>
+                  <li>
+                    Add or change the documentation as needed.
+                  </li>
+                  <li>
+                    Commit to your changes and push your branch to your fork on Github, the remote origin.
+                  </li>
+                  <li>
+                    Create a PR with proper title and description.
+                  </li>
+                  <li>
+                    Once the pull request is approved and merged you can pull the changes from upstream to your local repo and delete your extra branch(es).
+                  </li>
+                </ul>
+              </p>
+              <p>
+                <b>Rules:</b>
+                <ul>
+                  <li>
+                    By contributing to this repository, you give everyone right to use your code as needed.
+                  </li>
+                  <li>
+                    Be helpful and friendly.
+                  </li>
+                </ul>
+              </p>
+              <a href="/"><button class="btn btn-outline-danger" type="button">Click Here</button></a>
+            </div>
+        </div>
+
+        <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+      <div class="col-lg-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/186/186320.png" class="bd-placeholder-img rounded-circle bg-light" width="140" height="140" role="img" aria-label="Placeholder: 140x140" preserveAspectRation="xMidYMid slice" focusable="false"><title>HTML</title>
+        <br>
+        <h2>HTML5</h2>
+        <p>Short for HyperText Markup Language, the authoring language used to create documents on the World Wide Web.</p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" class="bd-placeholder-img rounded-circle bg-light" width="140" height="140" role="img" aria-label="Placeholder: 140x140" preserveAspectRation="xMidYMid slice" focusable="false"><title>HTML</title>
+        <br>
+        <h2>CSS3</h2>
+        <p>CSS is used for defining the styles for web pages. It describes the look and formatting of a document which is written in a markup language.</p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" class="bd-placeholder-img rounded-circle bg-light" width="140" height="140" role="img" aria-label="Placeholder: 140x140" preserveAspectRation="xMidYMid slice" focusable="false"><title>HTML</title>
+        <br>
+        <h2>JavaScript and its libraries</h2>
+        <p>JavaScript is commonly used for creating web pages. It allows us to add dynamic behavior to the webpage and add special effects to the webpage.</p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+    </main>
+    <!-----------------FOOTER----------------------->
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-muted">&copy; 2022 Srishti/Shreya/Srushti/Chaithanya, Inc</p>
+    
+        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <img src="{% static './images/title.png' %}" alt="Title" width="30" height="30"/>
+        </a>
+    
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item"><a href="/about" class="nav-link px-2 text-muted">About</a></li>
+          <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Animation Browsing</a></li>
+          {% if user.is_authenticated %}
+          <li class="nav-item"><a href="/directory" class="nav-link px-2 text-muted">Add Animation</a></li>
+          {% endif %}
+        </ul>
+      </footer>
+    </div>
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>

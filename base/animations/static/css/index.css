@@ -1,0 +1,62 @@
+.navbar-brand {
+    color: goldenrod;
+    text-shadow: 2px 2px 1px white;
+    font-family: 'Segoe UI', 'Times New Roman', Times, serif, Geneva, Verdana, sans-serif;
+}
+.nav-item:hover{
+    background-color: bisque;
+}
+.nav-link:hover {
+    color: brown;
+}
+.bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+}
+@media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+#header-album {
+    background: url("./../images/heading.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: -moz-linear-gradient();
+}
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  .marketing h2 {
+    font-weight: 400;
+  }
+  /* rtl:begin:ignore */
+  .marketing .col-lg-4 p {
+    margin-right: .75rem;
+    margin-left: .75rem;
+  }
+
+  /*-----------DIRECTORY--------------
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+  
+ 
